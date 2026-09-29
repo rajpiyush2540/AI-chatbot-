@@ -1,0 +1,79 @@
+.dropzone{
+  background: var(--card);
+  border: 1.5px dashed var(--line-strong);
+  border-radius: 14px;
+  padding: 30px 20px;
+  text-align:center;
+  cursor:pointer;
+  transition: border-color .2s ease, background .2s ease;
+}
+.dropzone:hover, .dropzone.drag{
+  border-color: var(--brass);
+  background: #FFFDF8;
+}
+.dropzone:focus-visible{ outline:2px solid var(--brass); outline-offset:3px; }
+.dropzone svg{ width:30px; height:30px; color: var(--brass); margin-bottom:12px; }
+.dropzone .dz-title{ font-weight:600; font-size:14.5px; margin-bottom:4px; }
+.dropzone .dz-sub{ font-size:12.5px; color:var(--ink-soft); }
+.dropzone .dz-formats{
+  margin-top:14px; font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+  color:var(--ink-faint); letter-spacing:.06em;
+}
+
+.scan-bar{
+  height:3px; border-radius:2px; overflow:hidden; background:var(--sage-wash);
+  margin-top:14px; position:relative;
+}
+.scan-bar::after{
+  content:''; position:absolute; top:0; left:-40%; width:40%; height:100%;
+  background: linear-gradient(90deg, transparent, var(--brass), transparent);
+  animation: sweep 1.1s ease-in-out infinite;
+}
+@keyframes sweep{ 0%{ left:-40%; } 100%{ left:100%; } }
+
+.case-file{
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+.case-file .tab{
+  display:flex; align-items:center; justify-content:space-between;
+  background: var(--ink);
+  color: #F2F1EC;
+  padding: 9px 16px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10.5px;
+  letter-spacing:.1em;
+}
+.case-file .tab .case-no{ color: #D9C99A; }
+.case-file .body{ padding:18px 18px 16px; }
+.file-row{ display:flex; gap:12px; align-items:flex-start; }
+.file-icon{
+  width:38px; height:38px; border-radius:9px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'IBM Plex Mono', monospace; font-size:10px; font-weight:600;
+  color:#fff; flex-shrink:0;
+}
+.file-icon.txt{ background: var(--ink-soft); }
+.file-icon.docx{ background: var(--slate); }
+.file-icon.pdf{ background: var(--coral); }
+.file-name{ font-weight:600; font-size:14px; line-height:1.3; word-break:break-word; }
+.file-meta{ font-size:12px; color:var(--ink-soft); margin-top:3px; }
+.file-meta span::after{ content:'·'; margin:0 5px; color:var(--ink-faint); }
+.file-meta span:last-child::after{ content:''; }
+.replace-btn{
+  margin-top:14px; width:100%;
+  background:none; border:1px solid var(--line-strong);
+  color:var(--ink-soft); font-family:inherit; font-size:12.5px;
+  padding:8px 10px; border-radius:8px; cursor:pointer;
+  transition: all .15s ease;
+}
+.replace-btn:hover{ border-color:var(--brass); color:var(--brass-dark); }
+
+.banner{
+  margin-top:14px; padding:10px 12px; border-radius:9px;
+  font-size:12.5px; line-height:1.5;
+  background:#FBEDE9; color:#8A3B2C; border:1px solid #EFCFC5;
+}
